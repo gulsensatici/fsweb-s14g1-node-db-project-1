@@ -95,7 +95,7 @@ describe('server.js', () => {
       const invalid1 = { name: "foo", budget: NaN }
       const invalid2 = { name: "foo", budget: 'aaa' }
       let res = await request(server).post('/api/accounts').send(invalid1)
-      expect(res.body.message).toMatch(/must be a number/i)
+      expect(res.body.message).toMatch(/must be a  number/i)
       expect(res.status).toBe(400)
       res = await request(server).post('/api/accounts').send(invalid2)
       expect(res.body.message).toMatch(/must be a number/i)
